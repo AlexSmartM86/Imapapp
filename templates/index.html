@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Imapapp</title>
+    <link href="{{ url_for('static', filename='stylesheets/style.css') }}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div  class="main">
+        <div class="logo_main">
+            <div class="logo_row"><h1>Email abfrage über Imap Server</h1></div>
+        </div>
+        <div class="body_main">
+            <div class="body_column">
+                <div class="input_daten">
+                    <div class="forms-column">
+                        <div class="ueberschrift">
+                            <h2>Geben sie hier die Daten ein</h2>
+                        </div>
+                        <div class="forms-row">
+                            <div class="forma">
+                                <form action="/my-link" method="post">
+                                    <ul class="wrapper">
+                                        <li class="form-row">
+                                            <label for="email">Emailadresse</label>
+                                            <input type="email" id="email" name="email">
+                                        </li>
+                                        <li class="form-row">
+                                            <label for="passwort">Passwort</label>
+                                            <input type="password" id="passwort" name="passwort">
+                                        </li>
+                                        <li class="form-row">
+                                            <label for="provider">Anbieter</label>
+                                            <input type="text" id="provider" name="provider">
+                                        </li>
+                                        <li class="form-row">
+                                            <label for="date">Datum</label>
+                                            <input type="date" data-date="" data-date-format="YYYY MM DD" id="date" name="date">
+                                        </li>
+                                        <li class="form-row">
+                                            <button type="submit">Absenden</button> 
+                                        </li>
+                                        <li class="form-row">
+                                            <button type="reset">Reset</button>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="output_card">
+                    <div class="output">
+                        <div class="headline"><h3>{{ Datum }}<br>{{ Subject }}</h3></div>
+                        <div class="main_text">{{ Text }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_main">
+            <div class="footer_row">Made by Aleksandr Majer 2024</div>
+        </div>
+    </div>
+</body>
+</html>
